@@ -72,7 +72,7 @@
 
                     <!-- DESKTOP BUTTONS -->
                     <div class="d-none d-lg-flex align-items-center gap-3">
-                        <a href="#contact" class="fw-semibold text-dark">
+                        <a href="#accountModal" class="account-link fw-semibold text-dark" data-bs-toggle="modal" data-account-tab="signin">
                             Sign In
                         </a>
 
@@ -83,7 +83,7 @@
 
                     <!-- MOBILE BUTTONS -->
                     <div class="d-lg-none mt-4">
-                        <a href="#contact" class="btn btn-outline-dark w-100 rounded-pill py-2 mb-3">
+                        <a href="#accountModal" class="btn btn-outline-dark w-100 rounded-pill py-2 mb-3" data-bs-toggle="modal" data-account-tab="signin">
                             Sign In
                         </a>
 
@@ -121,9 +121,51 @@
                 <strong class="cart-total" data-cart-total>₹0</strong>
             </div>
             <p class="cart-saved-note"><i class="bi bi-check-circle" aria-hidden="true"></i> Saved on this device</p>
-            <button class="cart-continue-button cart-checkout-button" type="button" data-checkout>Proceed to demo payment</button>
+            <button class="cart-continue-button cart-checkout-button" type="button" data-checkout>Proceed to pay</button>
             <p class="demo-payment-caption">Demo only · no real payment is collected</p>
             <a class="cart-continue-button" href="#shop" data-bs-dismiss="offcanvas">Continue shopping</a>
+        </div>
+    </div>
+
+    <div class="modal fade" id="accountModal" tabindex="-1" aria-labelledby="accountTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content account-modal">
+                <div class="modal-header">
+                    <div>
+                        <p class="cart-kicker mb-1">MANN VAASAM</p>
+                        <h2 class="modal-title" id="accountTitle">Welcome to your account</h2>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="account-tabs" role="tablist" aria-label="Account options">
+                        <button class="account-tab active" id="signinTab" type="button" role="tab" aria-selected="true" aria-controls="signinPanel" data-account-switch="signin">Sign in</button>
+                        <button class="account-tab" id="signupTab" type="button" role="tab" aria-selected="false" aria-controls="signupPanel" data-account-switch="signup">Create account</button>
+                    </div>
+                    <div class="account-demo-note"><i class="bi bi-info-circle" aria-hidden="true"></i><span>Account access is a preview. Sign in and registration are not connected yet.</span></div>
+                    <section id="signinPanel" class="account-panel" role="tabpanel" aria-labelledby="signinTab" data-account-panel="signin">
+                        <h3>Good to see you</h3>
+                        <p>Sign in to manage your Mann Vaasam account.</p>
+                        <form data-account-form="signin">
+                            <div class="mb-3"><label class="form-label" for="signinEmail">Email address</label><input class="form-control" id="signinEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+                            <div class="mb-3"><label class="form-label" for="signinPassword">Password</label><input class="form-control" id="signinPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required></div>
+                            <button class="account-submit" type="submit">Sign in</button>
+                            <p class="account-feedback" data-account-feedback="signin" role="status" aria-live="polite" hidden></p>
+                        </form>
+                    </section>
+                    <section id="signupPanel" class="account-panel" role="tabpanel" aria-labelledby="signupTab" data-account-panel="signup" hidden>
+                        <h3>Create your account</h3>
+                        <p>A simple way to keep up with your farm-fresh orders.</p>
+                        <form data-account-form="signup">
+                            <div class="mb-3"><label class="form-label" for="signupName">Full name</label><input class="form-control" id="signupName" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+                            <div class="mb-3"><label class="form-label" for="signupEmail">Email address</label><input class="form-control" id="signupEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+                            <div class="mb-3"><label class="form-label" for="signupPassword">Create password</label><input class="form-control" id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required></div>
+                            <button class="account-submit" type="submit">Create account</button>
+                            <p class="account-feedback" data-account-feedback="signup" role="status" aria-live="polite" hidden></p>
+                        </form>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 
