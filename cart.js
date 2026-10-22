@@ -15,6 +15,52 @@ const orderReference = document.querySelector("[data-order-reference]");
 const confirmPaymentButton = document.querySelector("[data-confirm-payment]");
 const contactForm = document.querySelector("[data-contact-form]");
 const contactStatus = document.querySelector("[data-contact-status]");
+const accountModal = document.querySelector("#accountModal");
+const accountTabs = document.querySelectorAll("[data-account-switch]");
+const accountPanels = document.querySelectorAll("[data-account-panel]");
+const accountForms = document.querySelectorAll("[data-account-form]");
+
+function showAccountTab(tabName) {
+    accountTabs.forEach((tab) => {
+        const isActive = tab.dataset.accountSwitch === tabName;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+    });
+
+    accountPanels.forEach((panel) => {
+        panel.hidden = panel.dataset.accountPanel !== tabName;
+    });
+}
+
+document.querySelectorAll("[data-account-tab]").forEach((link) => {
+    link.addEventListener("click", () => showAccountTab(link.dataset.accountTab));
+});
+
+accountTabs.forEach((tab) => {
+    tab.addEventListener("click", () => showAccountTab(tab.dataset.accountSwitch));
+});
+
+accountForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        const feedback = document.querySelector(`[data-account-feedback="${form.dataset.accountForm}"]`);
+        feedback.hidden = false;
+        feedback.textContent = "Account sign in and registration will be available when the secure account service is connected.";
+    });
+});
+
+accountModal.addEventListener("show.bs.modal", () => {
+    accountForms.forEach((form) => form.reset());
+    document.querySelectorAll("[data-account-feedback]").forEach((feedback) => {
+        feedback.hidden = true;
+        feedback.textContent = "";
+    });
+});
 
 const products = Array.from(addToCartButtons).map((button) => ({
     name: button.dataset.name,
