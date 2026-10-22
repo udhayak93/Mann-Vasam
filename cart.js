@@ -8,7 +8,8 @@ const cartCountLabels = document.querySelectorAll("[data-cart-count]");
 
 const products = Array.from(addToCartButtons).map((button) => ({
     name: button.dataset.name,
-    price: Number(button.dataset.price)
+    price: Number(button.dataset.price),
+    image: button.closest(".product-card").querySelector("img").src
 }));
 
 let cart = loadCart();
@@ -81,6 +82,11 @@ function renderCart() {
         const details = document.createElement("div");
         details.className = "cart-item-details";
 
+        const image = document.createElement("img");
+        image.className = "cart-item-image";
+        image.src = item.image;
+        image.alt = "";
+
         const name = document.createElement("h3");
         name.className = "cart-item-name";
         name.textContent = item.name;
@@ -114,7 +120,7 @@ function renderCart() {
         subtotal.textContent = formatPrice(item.price * item.quantity);
 
         row.dataset.productName = item.name;
-        row.append(details, controls, subtotal);
+        row.append(image, details, controls, subtotal);
         cartItemsContainer.append(row);
     });
 
@@ -142,7 +148,8 @@ addToCartButtons.forEach((button) => {
     button.addEventListener("click", () => {
         addProduct({
             name: button.dataset.name,
-            price: Number(button.dataset.price)
+            price: Number(button.dataset.price),
+            image: button.closest(".product-card").querySelector("img").src
         });
     });
 });
