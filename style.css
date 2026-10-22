@@ -1249,6 +1249,154 @@
             font-weight: 600;
         }
 
+        .account-modal {
+            overflow: hidden;
+            border: 1px solid #e6ebe5;
+            border-radius: 14px;
+            box-shadow: 0 24px 70px rgba(28, 51, 40, .18);
+        }
+
+        .account-modal .modal-header {
+            padding: 23px 26px 18px;
+            border-bottom: 1px solid #edf0eb;
+        }
+
+        .account-modal .modal-title {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -.03em;
+        }
+
+        .account-modal .modal-body {
+            padding: 22px 26px 26px;
+        }
+
+        .account-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            margin-bottom: 18px;
+            padding: 4px;
+            border-radius: 8px;
+            background: #f3f5f1;
+        }
+
+        .account-tab {
+            min-height: 42px;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: #68746b;
+            font-size: .88rem;
+            font-weight: 600;
+            transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+        }
+
+        .account-tab.active {
+            background: #fff;
+            color: var(--secondary);
+            box-shadow: 0 1px 4px rgba(28, 51, 40, .1);
+        }
+
+        .account-tab:focus-visible,
+        .account-submit:focus-visible {
+            outline: 3px solid rgba(46, 107, 75, .25);
+            outline-offset: 2px;
+        }
+
+        .account-demo-note {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            margin-bottom: 22px;
+            padding: 11px 12px;
+            border-radius: 7px;
+            background: #f3f7f2;
+            color: #526653;
+            font-size: .78rem;
+            line-height: 1.5;
+        }
+
+        .account-demo-note i {
+            margin-top: 2px;
+            color: var(--primary);
+        }
+
+        .account-panel h3 {
+            margin: 0 0 5px;
+            color: var(--secondary);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .account-panel > p {
+            margin: 0 0 18px;
+            color: var(--text-light);
+            font-size: .87rem;
+        }
+
+        .account-panel .form-label {
+            margin-bottom: 6px;
+            color: var(--secondary);
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        .account-panel .form-control {
+            min-height: 46px;
+            border-color: #dfe6dc;
+            border-radius: 6px;
+            font-size: .9rem;
+        }
+
+        .account-panel .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 .2rem rgba(46, 107, 75, .13);
+        }
+
+        .account-submit {
+            width: 100%;
+            min-height: 47px;
+            margin-top: 3px;
+            border: 0;
+            border-radius: 6px;
+            background: var(--primary);
+            color: #fff;
+            font-size: .91rem;
+            font-weight: 700;
+            transition: background .2s ease;
+        }
+
+        .account-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        .account-feedback {
+            margin: 13px 0 0;
+            padding: 10px 12px;
+            border-radius: 6px;
+            background: #f3f7f2;
+            color: var(--primary-dark);
+            font-size: .8rem;
+            line-height: 1.5;
+        }
+
+        .account-feedback[hidden],
+        .account-panel[hidden] {
+            display: none;
+        }
+
+        @media (max-width: 575.98px) {
+            .account-modal .modal-header {
+                padding: 19px 20px 15px;
+            }
+
+            .account-modal .modal-body {
+                padding: 18px 20px 22px;
+            }
+        }
+
         /* Refined storefront and cart styling */
         :root {
             --primary: #2e6b4b;
