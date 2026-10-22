@@ -99,19 +99,29 @@
 
     <div class="offcanvas offcanvas-end cart-drawer" tabindex="-1" id="cartDrawer" aria-labelledby="cartTitle">
         <div class="offcanvas-header">
-            <h2 class="offcanvas-title" id="cartTitle">Your Cart</h2>
+            <div>
+                <p class="cart-kicker mb-1">MANN VAASAM MARKET</p>
+                <h2 class="offcanvas-title" id="cartTitle">Your basket</h2>
+            </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close cart"></button>
         </div>
         <div class="offcanvas-body">
-            <p class="cart-empty" data-cart-empty>Your cart is empty. Add something fresh from the farm!</p>
+            <div class="cart-empty" data-cart-empty>
+                <span class="cart-empty-icon"><i class="bi bi-basket3" aria-hidden="true"></i></span>
+                <h3>Your basket is empty</h3>
+                <p>Choose fresh, thoughtfully grown produce from our farm collection.</p>
+                <a class="cart-continue-link" href="#shop" data-bs-dismiss="offcanvas">Explore the collection <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
             <div class="cart-items" data-cart-items></div>
         </div>
         <div class="cart-summary" data-cart-summary hidden>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="fw-semibold">Total</span>
+            <div class="cart-delivery-note"><i class="bi bi-leaf-fill" aria-hidden="true"></i><span>Freshly packed with care from local farms.</span></div>
+            <div class="d-flex justify-content-between align-items-center cart-total-row">
+                <span>Estimated total</span>
                 <strong class="cart-total" data-cart-total>₹0</strong>
             </div>
-            <p class="small text-muted mb-0">Your cart is saved on this device.</p>
+            <p class="cart-saved-note"><i class="bi bi-check-circle" aria-hidden="true"></i> Saved on this device</p>
+            <a class="cart-continue-button" href="#shop" data-bs-dismiss="offcanvas">Continue shopping</a>
         </div>
     </div>
 
