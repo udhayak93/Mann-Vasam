@@ -5,6 +5,16 @@ const cartEmptyMessage = document.querySelector("[data-cart-empty]");
 const cartSummary = document.querySelector("[data-cart-summary]");
 const cartTotal = document.querySelector("[data-cart-total]");
 const cartCountLabels = document.querySelectorAll("[data-cart-count]");
+const checkoutButton = document.querySelector("[data-checkout]");
+const paymentModalElement = document.querySelector("#paymentModal");
+const paymentModal = bootstrap.Modal.getOrCreateInstance(paymentModalElement);
+const paymentForm = document.querySelector("[data-demo-payment-form]");
+const paymentSuccess = document.querySelector("[data-payment-success]");
+const paymentTotal = document.querySelector("[data-payment-total]");
+const orderReference = document.querySelector("[data-order-reference]");
+const confirmPaymentButton = document.querySelector("[data-confirm-payment]");
+const contactForm = document.querySelector("[data-contact-form]");
+const contactStatus = document.querySelector("[data-contact-status]");
 
 const products = Array.from(addToCartButtons).map((button) => ({
     name: button.dataset.name,
@@ -174,6 +184,63 @@ cartItemsContainer.addEventListener("click", (event) => {
 
     saveCart();
     renderCart();
+});
+
+checkoutButton.addEventListener("click", () => {
+    if (cart.length === 0) {
+        return;
+    }
+
+    const total = cart.reduce((amount, item) => amount + item.price * item.quantity, 0);
+    paymentTotal.textContent = formatPrice(total);
+
+    const cartDrawer = document.querySelector("#cartDrawer");
+    const cartDrawerInstance = bootstrap.Offcanvas.getInstance(cartDrawer);
+
+    if (cartDrawerInstance && cartDrawer.classList.contains("show")) {
+        cartDrawer.addEventListener("hidden.bs.offcanvas", () => paymentModal.show(), { once: true });
+        cartDrawerInstance.hide();
+    } else {
+        paymentModal.show();
+    }
+});
+
+paymentModalElement.addEventListener("show.bs.modal", () => {
+    paymentForm.hidden = false;
+    paymentSuccess.hidden = true;
+});
+
+confirmPaymentButton.addEventListener("click", () => {
+    if (cart.length === 0) {
+        return;
+    }
+
+    orderReference.textContent = `MV-DEMO-${Date.now().toString().slice(-6)}`;
+    paymentForm.hidden = true;
+    paymentSuccess.hidden = false;
+
+    cart = [];
+    saveCart();
+    renderCart();
+    paymentSuccess.focus();
+});
+
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) {
+        return;
+    }
+
+    const name = contactForm.elements.name.value.trim();
+    const email = contactForm.elements.email.value.trim();
+    const message = contactForm.elements.message.value.trim();
+    const subject = encodeURIComponent(`Website inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+    contactStatus.hidden = false;
+    contactStatus.textContent = "Your email app is opening with your message ready. Press Send there to complete your inquiry.";
+    window.location.href = `mailto:training@manvaasam.com?subject=${subject}&body=${body}`;
 });
 
 renderCart();

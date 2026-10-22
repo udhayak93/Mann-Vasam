@@ -1068,6 +1068,187 @@
             }
         }
 
+        .cart-checkout-button {
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .cart-checkout-button:focus-visible,
+        .cart-continue-button:focus-visible,
+        .product-cart:focus-visible {
+            outline: 3px solid rgba(46, 107, 75, .3);
+            outline-offset: 3px;
+        }
+
+        .demo-payment-caption {
+            margin: 8px 0 15px;
+            color: var(--text-light);
+            font-size: .74rem;
+            text-align: center;
+        }
+
+        .payment-modal {
+            overflow: hidden;
+            border: 1px solid #e7ede5;
+            border-radius: 16px;
+            box-shadow: 0 24px 70px rgba(28, 51, 40, .18);
+        }
+
+        .payment-modal .modal-header {
+            padding: 21px 24px;
+            border-bottom-color: #e9eee7;
+        }
+
+        .payment-modal .modal-title {
+            color: var(--secondary);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -.035em;
+        }
+
+        .payment-modal .modal-body {
+            padding: 24px;
+        }
+
+        .demo-payment-notice {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            padding: 14px;
+            border: 1px solid #dce9dc;
+            border-radius: 9px;
+            background: #f2f7f1;
+            color: #435b49;
+            font-size: .88rem;
+            line-height: 1.55;
+        }
+
+        .demo-payment-notice i {
+            margin-top: 2px;
+            color: var(--primary);
+        }
+
+        .payment-total-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 24px 0 18px;
+            padding-bottom: 17px;
+            border-bottom: 1px solid #e9eee7;
+            color: var(--secondary);
+        }
+
+        .payment-total-row strong {
+            font-size: 1.25rem;
+        }
+
+        .payment-success {
+            padding: 10px 0 2px;
+            text-align: center;
+        }
+
+        .payment-success[hidden] {
+            display: none;
+        }
+
+        .payment-success-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #e8f3e9;
+            color: #2e6b4b;
+            font-size: 2rem;
+        }
+
+        .payment-success h3 {
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .payment-success > p:not(.cart-kicker) {
+            color: var(--text-light);
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        .payment-reference {
+            margin: 18px 0 22px;
+            padding: 11px;
+            border-radius: 7px;
+            background: #f5f7f2;
+            color: var(--secondary) !important;
+            font-size: .83rem !important;
+        }
+
+        .contact-intro {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .contact-form .form-label {
+            margin-bottom: 7px;
+            color: var(--secondary);
+            font-size: .86rem;
+            font-weight: 600;
+        }
+
+        .contact-form .form-control {
+            min-height: 48px;
+            border: 1px solid #dfe6dc;
+            border-radius: 7px;
+            background: #fff;
+            font-size: .92rem;
+        }
+
+        .contact-form textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 .2rem rgba(46, 107, 75, .13);
+        }
+
+        .contact-form .btn-primary-custom {
+            min-height: 48px;
+            border: 0;
+            border-radius: 7px;
+            font-weight: 700;
+        }
+
+        .contact-status {
+            margin: 14px 0 0;
+            padding: 11px 13px;
+            border-radius: 7px;
+            background: #f2f7f1;
+            color: var(--primary-dark);
+            font-size: .84rem;
+            line-height: 1.5;
+        }
+
+        .contact-status[hidden] {
+            display: none;
+        }
+
+        .contact-direct {
+            margin: 16px 0 0;
+            color: var(--text-light);
+            font-size: .86rem;
+        }
+
+        .contact-direct a {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
         /* Refined storefront and cart styling */
         :root {
             --primary: #2e6b4b;

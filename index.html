@@ -121,7 +121,38 @@
                 <strong class="cart-total" data-cart-total>₹0</strong>
             </div>
             <p class="cart-saved-note"><i class="bi bi-check-circle" aria-hidden="true"></i> Saved on this device</p>
+            <button class="cart-continue-button cart-checkout-button" type="button" data-checkout>Proceed to demo payment</button>
+            <p class="demo-payment-caption">Demo only · no real payment is collected</p>
             <a class="cart-continue-button" href="#shop" data-bs-dismiss="offcanvas">Continue shopping</a>
+        </div>
+    </div>
+
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content payment-modal">
+                <div class="modal-header">
+                    <div>
+                        <p class="cart-kicker mb-1">MANN VAASAM MARKET</p>
+                        <h2 class="modal-title" id="paymentTitle">Demo checkout</h2>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div data-demo-payment-form>
+                        <div class="demo-payment-notice"><i class="bi bi-info-circle-fill" aria-hidden="true"></i><span>This is a demo payment. No card details are requested and no money will be charged.</span></div>
+                        <div class="payment-total-row"><span>Order total</span><strong data-payment-total>₹0</strong></div>
+                        <button type="button" class="cart-continue-button" data-confirm-payment>Complete demo payment</button>
+                    </div>
+                    <div class="payment-success" data-payment-success role="status" tabindex="-1" hidden>
+                        <span class="payment-success-icon"><i class="bi bi-check-lg" aria-hidden="true"></i></span>
+                        <p class="cart-kicker mb-2">DEMO ORDER COMPLETE</p>
+                        <h3>Payment successful</h3>
+                        <p>Your demo order is confirmed. No payment was processed.</p>
+                        <p class="payment-reference">Reference: <strong data-order-reference></strong></p>
+                        <button type="button" class="cart-continue-button" data-bs-dismiss="modal">Continue shopping</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -566,15 +597,15 @@
                         <div class="col-lg-6">
                             <div class="contact-form">
                                 <h2 class="section-title">Get in Touch</h2>
-                                <form onsubmit="event.preventDefault();">
-                                    <div class="mb-4"><input type="text" class="form-control" placeholder="Your Name"
-                                            required></div>
-                                    <div class="mb-4"><input type="email" class="form-control"
-                                            placeholder="Email Address" required></div>
-                                    <div class="mb-4"><textarea rows="5" class="form-control"
-                                            placeholder="Write your message" required></textarea></div>
-                                    <button class="btn btn-primary-custom text-white w-100 py-3">Send Message</button>
+                                <p class="contact-intro">Tell us how we can help. We’ll open your email app with your message ready to send.</p>
+                                <form id="contactForm" data-contact-form>
+                                    <div class="mb-3"><label class="form-label" for="contactName">Your name</label><input id="contactName" name="name" type="text" class="form-control" placeholder="Your Name" autocomplete="name" required></div>
+                                    <div class="mb-3"><label class="form-label" for="contactEmail">Email address</label><input id="contactEmail" name="email" type="email" class="form-control" placeholder="Email Address" autocomplete="email" required></div>
+                                    <div class="mb-3"><label class="form-label" for="contactMessage">Your message</label><textarea id="contactMessage" name="message" rows="5" class="form-control" placeholder="Write your message" required></textarea></div>
+                                    <button type="submit" class="btn btn-primary-custom text-white w-100 py-3">Send Message</button>
+                                    <p class="contact-status" data-contact-status role="status" aria-live="polite" hidden></p>
                                 </form>
+                                <p class="contact-direct">Prefer email? <a href="mailto:training@manvaasam.com">training@manvaasam.com</a></p>
                             </div>
                         </div>
                     </div>
