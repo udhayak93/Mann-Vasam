@@ -21,7 +21,7 @@ const accountTabs = document.querySelectorAll("[data-account-switch]");
 const accountPanels = document.querySelectorAll("[data-account-panel]");
 const accountForms = document.querySelectorAll("[data-account-form]");
 
-function showAccountTab(tabName) {\n    document.querySelector("#accountTitle").textContent = tabName === "signin" ? "Welcome back" : "Create your account";
+function showAccountTab(tabName) {\n    document.querySelector("#accountTitle").textContent = tabName === "signin" ? "Sign in to your account" : "Create your account";
     accountTabs.forEach((tab) => {
         const isActive = tab.dataset.accountSwitch === tabName;
         tab.classList.toggle("active", isActive);
