@@ -122,7 +122,6 @@
             </div>
             <p class="cart-saved-note"><i class="bi bi-check-circle" aria-hidden="true"></i> Saved on this device</p>
             <button class="cart-continue-button cart-checkout-button" type="button" data-checkout>Proceed to Payment</button>
-            <p class="demo-payment-caption">Demo only · no real payment is collected</p>
             <a class="cart-continue-button" href="#shop" data-bs-dismiss="offcanvas">Continue shopping</a>
         </div>
     </div>
@@ -175,21 +174,24 @@
                 <div class="modal-header">
                     <div>
                         <p class="cart-kicker mb-1">MANN VAASAM MARKET</p>
-                        <h2 class="modal-title" id="paymentTitle">Demo checkout</h2>
+                        <h2 class="modal-title" id="paymentTitle">Secure Checkout</h2>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div data-demo-payment-form>
-                        <div class="demo-payment-notice"><i class="bi bi-info-circle-fill" aria-hidden="true"></i><span>This is a demo payment. No card details are requested and no money will be charged.</span></div>
+                    <div data-payment-form>
                         <div class="payment-total-row"><span>Order total</span><strong data-payment-total>₹0</strong></div>
-                        <button type="button" class="cart-continue-button" data-confirm-payment>Complete demo payment</button>
+                        <label class="checkout-consent">
+                            <input type="checkbox" data-order-consent required>
+                            <span>I have reviewed my order details and agree to the <a href="#home">Terms &amp; Conditions</a> and <a href="#home">Privacy Policy</a>.</span>
+                        </label>
+                        <button type="button" class="cart-continue-button" data-confirm-payment>Confirm &amp; Place Order</button>
                     </div>
                     <div class="payment-success" data-payment-success role="status" tabindex="-1" hidden>
                         <span class="payment-success-icon"><i class="bi bi-check-lg" aria-hidden="true"></i></span>
-                        <p class="cart-kicker mb-2">DEMO ORDER COMPLETE</p>
-                        <h3>Payment successful</h3>
-                        <p>Your demo order is confirmed. No payment was processed.</p>
+                        <p class="cart-kicker mb-2">ORDER CONFIRMED</p>
+                        <h3>Thank you for your order</h3>
+                        <p>Your order details have been confirmed successfully.</p>
                         <p class="payment-reference">Reference: <strong data-order-reference></strong></p>
                         <button type="button" class="cart-continue-button" data-bs-dismiss="modal">Continue shopping</button>
                     </div>
