@@ -2095,3 +2095,28 @@
             }
         }
 
+
+
+/* Corporate account experience */
+.account-dialog{max-width:850px;padding:16px}.account-modal{display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;border:0;border-radius:22px;box-shadow:0 24px 80px rgba(18,35,25,.2)}
+.account-brand-panel{display:flex;flex-direction:column;justify-content:center;padding:42px 34px;color:#fff;background:linear-gradient(155deg,#173d2b 0%,#285b3e 58%,#47784d 100%)}
+.account-brand-mark{display:grid;place-items:center;width:48px;height:48px;margin-bottom:22px;border:1px solid rgba(255,255,255,.35);border-radius:14px;font-size:25px}
+.account-brand-name,.account-eyebrow{margin:0 0 10px;font-size:10px;font-weight:800;letter-spacing:1.8px}
+.account-brand-panel h2{margin:0 0 14px;color:#fff;font-size:clamp(24px,3vw,31px);font-weight:700;line-height:1.2}
+.account-brand-panel>p:not(.account-brand-name){margin:0;color:rgba(255,255,255,.78);font-size:13px;line-height:1.7}
+.account-brand-points{display:grid;gap:12px;margin-top:32px;color:rgba(255,255,255,.9);font-size:12px}.account-brand-points i{margin-right:7px;color:#c6e2a9}
+.account-form-panel{min-width:0;padding:34px 38px 30px;background:#fff}.account-modal-heading{display:flex;justify-content:space-between;gap:15px;margin-bottom:22px}
+.account-eyebrow{color:#66806b;font-size:9px}.account-modal-heading .modal-title{margin:0;color:#1b2c21;font-size:25px;font-weight:700}.account-heading-copy{margin:7px 0 0;color:#78827b;font-size:12px}
+.account-tabs{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:5px;margin-bottom:18px;border-radius:10px;background:#f2f5f1}
+.account-tab{padding:10px 12px;border:0;border-radius:7px;color:#6d786f;background:transparent;font-size:12px;font-weight:700}.account-tab.active{color:#244b32;background:#fff;box-shadow:0 2px 8px rgba(30,55,36,.09)}
+.account-service-note{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;margin-bottom:20px;border:1px solid #e3ebdf;border-radius:9px;color:#667565;background:#f7faf5;font-size:10px;line-height:1.5}.account-service-note i{color:#3c7148;font-size:15px}
+.account-panel h3{margin:0 0 5px;color:#26382b;font-size:18px;font-weight:700}.account-panel>p{margin:0 0 19px;color:#879087;font-size:11px}
+.account-field{margin-bottom:14px}.account-field .form-label{display:block;margin-bottom:6px;color:#344338;font-size:11px;font-weight:700}
+.account-input-wrap{position:relative;display:flex;align-items:center}.account-input-wrap>i{position:absolute;left:13px;z-index:1;color:#87958a;font-size:14px;pointer-events:none}
+.account-input-wrap .form-control{min-height:44px;padding:10px 14px 10px 38px;border:1px solid #e0e6df;border-radius:8px;color:#26382b;background:#fff;box-shadow:none;font-size:12px}
+.account-input-wrap .form-control:focus{border-color:#6b936e;box-shadow:0 0 0 3px rgba(77,128,79,.1)}.account-input-wrap .form-control::placeholder{color:#adb6ae}
+.account-field-hint{display:block;margin-top:5px;color:#929c93;font-size:10px}
+.account-submit{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:45px;margin-top:7px;border:0;border-radius:8px;color:#fff;background:#285638;font-size:12px;font-weight:700;transition:background .2s ease,transform .2s ease}
+.account-submit:hover{color:#fff;background:#1d442b;transform:translateY(-1px)}.account-feedback{padding:10px 12px;margin:12px 0 0;border-radius:8px;color:#74552a;background:#fff7e8;font-size:11px;line-height:1.5}.account-feedback[hidden]{display:none}
+.account-switch-copy{margin:17px 0 0!important;color:#7d887f!important;text-align:center;font-size:11px!important}.account-switch-copy button{padding:0;border:0;color:#2e6840;background:transparent;font-size:inherit;font-weight:700}.account-switch-copy button:hover{text-decoration:underline}
+@media(max-width:650px){.account-dialog{margin:10px auto;padding:8px}.account-modal{grid-template-columns:1fr;border-radius:17px}.account-brand-panel{display:none}.account-form-panel{padding:27px 22px 24px}.account-modal-heading .modal-title{font-size:22px}}
