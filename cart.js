@@ -8,11 +8,12 @@ const cartCountLabels = document.querySelectorAll("[data-cart-count]");
 const checkoutButton = document.querySelector("[data-checkout]");
 const paymentModalElement = document.querySelector("#paymentModal");
 const paymentModal = bootstrap.Modal.getOrCreateInstance(paymentModalElement);
-const paymentForm = document.querySelector("[data-demo-payment-form]");
+const paymentForm = document.querySelector("[data-payment-form]");
 const paymentSuccess = document.querySelector("[data-payment-success]");
 const paymentTotal = document.querySelector("[data-payment-total]");
 const orderReference = document.querySelector("[data-order-reference]");
 const confirmPaymentButton = document.querySelector("[data-confirm-payment]");
+const orderConsent = document.querySelector("[data-order-consent]");
 const contactForm = document.querySelector("[data-contact-form]");
 const contactStatus = document.querySelector("[data-contact-status]");
 const accountModal = document.querySelector("#accountModal");
@@ -254,14 +255,21 @@ checkoutButton.addEventListener("click", () => {
 paymentModalElement.addEventListener("show.bs.modal", () => {
     paymentForm.hidden = false;
     paymentSuccess.hidden = true;
+    orderConsent.checked = false;
 });
 
 confirmPaymentButton.addEventListener("click", () => {
+    if (!orderConsent.checked) {
+        orderConsent.focus();
+        orderConsent.reportValidity();
+        return;
+    }
+
     if (cart.length === 0) {
         return;
     }
 
-    orderReference.textContent = `MV-DEMO-${Date.now().toString().slice(-6)}`;
+    orderReference.textContent = `MV-${Date.now().toString().slice(-6)}`;
     paymentForm.hidden = true;
     paymentSuccess.hidden = false;
 
