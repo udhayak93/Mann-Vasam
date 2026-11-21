@@ -21,7 +21,7 @@ const accountTabs = document.querySelectorAll("[data-account-switch]");
 const accountPanels = document.querySelectorAll("[data-account-panel]");
 const accountForms = document.querySelectorAll("[data-account-form]");
 
-function showAccountTab(tabName) {
+function showAccountTab(tabName) {\n    document.querySelector("#accountTitle").textContent = tabName === "signin" ? "Welcome back" : "Create your account";
     accountTabs.forEach((tab) => {
         const isActive = tab.dataset.accountSwitch === tabName;
         tab.classList.toggle("active", isActive);
@@ -44,14 +44,22 @@ accountTabs.forEach((tab) => {
 accountForms.forEach((form) => {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
+        if (!form.reportValidity()) return;
 
-        if (!form.reportValidity()) {
-            return;
+        if (form.dataset.accountForm === "signup") {
+            const password = form.querySelector("#signupPassword");
+            const confirmPassword = form.querySelector("#signupConfirmPassword");
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity("Passwords do not match.");
+                confirmPassword.reportValidity();
+                confirmPassword.addEventListener("input", () => confirmPassword.setCustomValidity(""), { once: true });
+                return;
+            }
         }
 
         const feedback = document.querySelector(`[data-account-feedback="${form.dataset.accountForm}"]`);
         feedback.hidden = false;
-        feedback.textContent = "Account sign in and registration will be available when the secure account service is connected.";
+        feedback.textContent = "The form looks good. Secure sign-in and account creation will work once the website is connected to an authentication service. No password has been stored.";
     });
 });
 
