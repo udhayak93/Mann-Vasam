@@ -2157,3 +2157,197 @@
 .account-footer-note{display:flex;align-items:flex-start;gap:8px;padding-top:16px;margin-top:22px;border-top:1px solid #edf0ec;color:#8a948b;font-size:10px;line-height:1.5}
 .account-footer-note i{flex:0 0 auto;color:#608168;font-size:13px}
 @media(max-width:480px){.account-dialog{width:calc(100% - 20px);margin:1rem auto}.account-form-panel{padding:24px 22px 20px}.account-modal-heading{margin-bottom:25px}.account-intro .modal-title{font-size:22px}}
+
+
+/* Mann Vaasam - corporate account modal refinement */
+#accountModal .account-dialog {
+    width: calc(100% - 32px);
+    max-width: 500px;
+    margin: 1.5rem auto;
+    padding: 0;
+}
+#accountModal .account-modal {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e7ece6;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 28px 90px rgba(20, 42, 27, 0.22);
+}
+#accountModal .account-form-panel {
+    padding: 36px 42px 30px;
+    background: #ffffff;
+}
+#accountModal .account-modal-heading {
+    align-items: center;
+    margin-bottom: 34px;
+}
+#accountModal .account-brand-lockup {
+    gap: 12px;
+}
+#accountModal .account-brand-mark {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 12px;
+    color: #ffffff;
+    background: #285638;
+    font-size: 20px;
+}
+#accountModal .account-brand-lockup strong {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+#accountModal .account-brand-lockup small {
+    margin-top: 3px;
+    font-size: 10px;
+    letter-spacing: .2px;
+}
+#accountModal .account-intro {
+    margin-bottom: 25px;
+}
+#accountModal .account-eyebrow {
+    margin-bottom: 9px;
+    color: #62806a;
+    font-size: 9px;
+    letter-spacing: 1.6px;
+}
+#accountModal .account-intro .modal-title {
+    color: #203328;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -.8px;
+    line-height: 1.2;
+}
+#accountModal .account-heading-copy {
+    max-width: 340px;
+    margin-top: 9px;
+    color: #78847b;
+    font-size: 12px;
+    line-height: 1.65;
+}
+#accountModal .account-tabs {
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: 25px;
+    border: 1px solid #e9eee8;
+    border-radius: 9px;
+    background: #f5f7f4;
+}
+#accountModal .account-tab {
+    min-height: 39px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    color: #737f75;
+    font-size: 12px;
+    font-weight: 650;
+}
+#accountModal .account-tab.active {
+    color: #285638;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(30, 55, 36, .10);
+}
+#accountModal .account-tab.active:after {
+    display: none;
+}
+#accountModal .account-field {
+    margin-bottom: 17px;
+}
+#accountModal .account-field .form-label {
+    margin-bottom: 7px;
+    color: #35463a;
+    font-size: 11px;
+    font-weight: 650;
+}
+#accountModal .account-field .form-control {
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #dce4dc;
+    border-radius: 8px;
+    color: #26382b;
+    background: #ffffff;
+    font-size: 12px;
+}
+#accountModal .account-field .form-control:hover {
+    border-color: #b9c9bb;
+}
+#accountModal .account-field .form-control:focus {
+    border-color: #62876a;
+    box-shadow: 0 0 0 3px rgba(49, 99, 60, .10);
+}
+#accountModal .account-submit {
+    min-height: 49px;
+    margin-top: 8px;
+    border: 1px solid #285638;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #285638;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .15px;
+}
+#accountModal .account-submit:hover {
+    border-color: #1e452c;
+    background: #1e452c;
+}
+#accountModal .account-panel .account-switch-copy {
+    display: block !important;
+    margin: 22px 0 0 !important;
+    color: #77837a !important;
+    font-size: 11px !important;
+    text-align: center;
+}
+#accountModal .account-switch-copy button {
+    margin-left: 3px;
+    color: #285638;
+    font-weight: 700;
+}
+#accountModal .account-field-hint {
+    color: #8a958c;
+    font-size: 10px;
+}
+#accountModal .account-feedback {
+    border: 1px solid #e6eadf;
+    border-radius: 8px;
+    color: #53664f;
+    background: #f7faf5;
+    font-size: 11px;
+}
+#accountModal .account-footer-note {
+    align-items: flex-start;
+    padding-top: 15px;
+    margin-top: 24px;
+    border-top: 1px solid #edf0ec;
+    color: #8a948c;
+    font-size: 10px;
+    line-height: 1.55;
+}
+#accountModal .account-footer-note i {
+    margin-top: 1px;
+    color: #63806a;
+}
+@media (max-width: 520px) {
+    #accountModal .account-dialog {
+        width: calc(100% - 22px);
+        margin: 11px auto;
+    }
+    #accountModal .account-form-panel {
+        padding: 27px 23px 23px;
+    }
+    #accountModal .account-modal-heading {
+        margin-bottom: 28px;
+    }
+    #accountModal .account-intro .modal-title {
+        font-size: 23px;
+    }
+}
+@media (max-width: 360px) {
+    #accountModal .account-form-panel {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+    #accountModal .account-brand-mark {
+        width: 38px;
+        height: 38px;
+    }
+}
