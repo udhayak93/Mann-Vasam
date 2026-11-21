@@ -2351,3 +2351,117 @@
         height: 38px;
     }
 }
+
+
+/* Final layout reset for account modal - prevent legacy account styles from leaking in */
+#accountModal .modal-dialog.account-dialog {
+    width: min(500px, calc(100% - 32px)) !important;
+    max-width: 500px !important;
+    margin: 1.25rem auto !important;
+    padding: 0 !important;
+}
+#accountModal .modal-content.account-modal {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+#accountModal .account-form-panel {
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 32px 36px 26px !important;
+}
+#accountModal .account-modal-heading {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    margin: 0 0 28px !important;
+    gap: 12px !important;
+}
+#accountModal .account-brand-lockup {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    min-width: 0 !important;
+    gap: 11px !important;
+}
+#accountModal .account-brand-lockup > span:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+}
+#accountModal .account-brand-lockup strong,
+#accountModal .account-brand-lockup small {
+    display: block !important;
+    line-height: 1.25 !important;
+}
+#accountModal .account-modal-heading .btn-close {
+    display: block !important;
+    flex: 0 0 14px !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 7px !important;
+    opacity: .65;
+}
+#accountModal .account-intro {
+    display: block !important;
+    margin: 0 0 22px !important;
+}
+#accountModal .account-tabs {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    margin: 0 0 22px !important;
+}
+#accountModal .account-panel:not([hidden]) {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#accountModal .account-panel[hidden] {
+    display: none !important;
+}
+#accountModal .account-panel form {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#accountModal .account-panel .account-field {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 15px !important;
+}
+#accountModal .account-panel .account-submit {
+    display: flex !important;
+    width: 100% !important;
+    margin: 5px 0 0 !important;
+}
+#accountModal .account-panel .account-switch-copy {
+    display: block !important;
+    margin: 19px 0 0 !important;
+}
+#accountModal .account-footer-note {
+    margin-top: 22px !important;
+}
+@media (max-width: 520px) {
+    #accountModal .modal-dialog.account-dialog {
+        width: calc(100% - 22px) !important;
+        margin: 11px auto !important;
+    }
+    #accountModal .account-form-panel {
+        padding: 25px 22px 22px !important;
+    }
+}
