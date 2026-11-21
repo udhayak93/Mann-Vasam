@@ -1081,13 +1081,6 @@
             outline-offset: 3px;
         }
 
-        .demo-payment-caption {
-            margin: 8px 0 15px;
-            color: var(--text-light);
-            font-size: .74rem;
-            text-align: center;
-        }
-
         .payment-modal {
             overflow: hidden;
             border: 1px solid #e7ede5;
@@ -1111,22 +1104,31 @@
             padding: 24px;
         }
 
-        .demo-payment-notice {
+        .checkout-consent {
             display: flex;
-            gap: 11px;
             align-items: flex-start;
-            padding: 14px;
-            border: 1px solid #dce9dc;
-            border-radius: 9px;
-            background: #f2f7f1;
-            color: #435b49;
+            gap: 10px;
+            margin: 0 0 20px;
+            color: var(--text-light);
             font-size: .88rem;
-            line-height: 1.55;
+            line-height: 1.6;
+            cursor: pointer;
         }
 
-        .demo-payment-notice i {
-            margin-top: 2px;
+        .checkout-consent input {
+            width: 17px;
+            height: 17px;
+            margin-top: 3px;
+            flex: 0 0 auto;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .checkout-consent a {
             color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
         .payment-total-row {
